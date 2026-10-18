@@ -7,11 +7,12 @@ Welcome to the hands-on repository for the **"Demystifying Linux: From Desktop t
 ```text
 
 ├── 01-scripts/       # Bash and Python automation scripts
-│   ├── setup.sh
-│   └── report.py
-├── 02-docker/        # Dockerfile and containerized application sample
-│   ├── Dockerfile
-│   └── app.py
+│   ├── log-report.sh # Didactic Bash example: fake log generator + analyzer
+│   └── report.py     # Python system report generator
+├── 02-docker/        # Dockerfile, static website and run script
+│   ├── Dockerfile    # nginx:alpine image serving a static site
+│   ├── index.html    # Simple website served by the container
+│   └── setup.sh      # Build the image and run the container
 └── cheat-sheet.md    # Quick reference guide for essential Linux commands
 
 ```
@@ -38,9 +39,9 @@ cd demystifying-linux-course
 ```bash
 cd 01-scripts
 
-# Grant execution permission and run the Bash setup script
-chmod +x setup.sh
-./setup.sh
+# Grant execution permission and run the Bash log analyzer
+chmod +x log-report.sh
+./log-report.sh
 
 # Run the Python report generator
 python3 report.py
@@ -52,11 +53,15 @@ python3 report.py
 ```bash
 cd ../02-docker
 
-# Build the Docker image
-docker build -t linux-course-app:1.0 .
+# Grant execution permission, build the image and run the container
+chmod +x setup.sh
+./setup.sh
 
-# Run the isolated container
-docker run --rm linux-course-app:1.0
+# Open the website served inside the container
+# http://localhost:8080
+
+# Stop and remove the container when done
+docker stop linux-course-app && docker rm linux-course-app
 
 ```
 
@@ -72,39 +77,6 @@ lazygit      # Terminal Git interface
 
 ```
 
----
+## Cheat Sheet
 
-### 7. `cheat-sheet.md`
-
-```markdown
-# Essential Linux Command Cheat Sheet
-
-## Directory & File Operations
-- `pwd`: Print current working directory path
-- `ls -la`: List files with details and hidden files
-- `cd <dir>`: Change directory (`cd ..` to go up one level)
-- `mkdir -p <dir>`: Create nested directories
-- `touch <file>`: Create an empty file
-- `rm -rf <file/dir>`: Remove file or directory recursively
-- `cp -r <src> <dest>`: Copy file or directory
-- `mv <src> <dest>`: Move or rename file/directory
-
-## Permissions & System
-- `chmod +x <file>`: Make file executable
-- `chmod 644 <file>`: Set read/write for owner, read-only for others
-- `sudo apt update && sudo apt install <package>`: Install software via package manager
-- `systemctl status <service>`: Check status of a system service
-
-## Process Monitoring
-- `btop`: Interactive resource monitor
-- `htop`: Interactive process viewer
-- `killall <process_name>`: Terminate process by name
-
-## Git & Version Control
-- `git init`: Initialize repository
-- `git status`: Check working tree status
-- `git add .`: Stage all modified files
-- `git commit -m "message"`: Commit changes
-- `lazygit`: Terminal UI for Git workflow
-
-```-
+Check [cheat-sheet.md](cheat-sheet.md) for a quick reference of the essential Linux commands covered during the workshop.

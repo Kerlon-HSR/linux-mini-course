@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demystifying Linux — Demo Docker</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    main { max-width: 720px; width: 100%; }
+    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    .sub { color: #94a3b8; margin-bottom: 2rem; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .card h2 { font-size: 1.25rem; color: #38bdf8; margin-bottom: 0.25rem; }
+    .card p { font-size: 0.9rem; color: #94a3b8; }
+    pre {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    code { font-family: ui-monospace, "JetBrains Mono", monospace; color: #a5f3fc; }
+    footer { margin-top: 2rem; font-size: 0.85rem; color: #64748b; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>&#128044; Site servido por um container Docker</h1>
+    <p class="sub">
+      Esta página não está rodando direto na máquina — ela sai de dentro
+      de um container com o <strong>nginx</strong> isolado em Alpine Linux.
+    </p>
+
+    <section class="cards">
+      <div class="card">
+        <h2>nginx:alpine</h2>
+        <p>imagem base (~20 MB)</p>
+      </div>
+      <div class="card">
+        <h2>:80</h2>
+        <p>porta dentro do container</p>
+      </div>
+      <div class="card">
+        <h2>8080 &rarr; 80</h2>
+        <p>mapeamento de portas</p>
+      </div>
+    </section>
+
+    <h2>Como verificar que é um container de verdade:</h2>
+    <pre><code># lista os containers em execução
+docker ps
+
+# "bate" no site de dentro do terminal
+curl http://localhost:8080
+
+# enxerga o processo de dentro do container
+docker exec linux-course-app ps</code></pre>
+
+    <footer>
+      Mini-curso Demystifying Linux: From Desktop to Engineering &mdash;
+      módulo de containerização.
+    </footer>
+  </main>
+</body>
+</html>
