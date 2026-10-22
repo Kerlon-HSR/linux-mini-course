@@ -13,9 +13,17 @@ Welcome to the hands-on repository for the **"Demystifying Linux: From Desktop t
 │   ├── Dockerfile    # nginx:alpine image serving a static site
 │   ├── index.html    # Simple website served by the container
 │   └── setup.sh      # Build the image and run the container
-└── cheat-sheet.md    # Quick reference guide for essential Linux commands
+├── cheat-sheet.md    # Quick reference guide for essential Linux commands
+└── demystifying-linux-slides.pdf  # Slide deck presented during the workshop
 
 ```
+
+## Slides
+
+The full slide deck presented during the workshop is available as
+[demystifying-linux-slides.pdf](demystifying-linux-slides.pdf). It follows the same
+modules as this repository, so you can keep it open while working through the
+scripts and the Docker example.
 
 ## Prerequisites & Setup
 
