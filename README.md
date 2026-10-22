@@ -1,6 +1,8 @@
 # Demystifying Linux: From Desktop to Engineering
 
-Welcome to the hands-on repository for the **"Demystifying Linux: From Desktop to Engineering"** mini-course. This repository contains all code samples, automation scripts, Docker configurations, and reference material used during the 2.5-hour workshop.
+![Cover of the "Demystifying Linux" slide deck](assets/slides-cover.png)
+
+Welcome to the hands-on repository for the **"Demystifying Linux: From Desktop to Engineering"** mini-course — a 2.5-hour workshop delivered in **Brazilian Portuguese** at the **VI Semana de Engenharia Elétrica**. It contains all code samples, automation scripts, Docker configurations, and reference material used during the presentation.
 
 ## Repository Structure
 
@@ -13,6 +15,8 @@ Welcome to the hands-on repository for the **"Demystifying Linux: From Desktop t
 │   ├── Dockerfile    # nginx:alpine image serving a static site
 │   ├── index.html    # Simple website served by the container
 │   └── setup.sh      # Build the image and run the container
+├── assets/
+│   └── slides-cover.png # Cover of the slide deck (shown above)
 ├── cheat-sheet.md    # Quick reference guide for essential Linux commands
 └── demystifying-linux-slides.pdf  # Slide deck presented during the workshop
 
@@ -21,8 +25,9 @@ Welcome to the hands-on repository for the **"Demystifying Linux: From Desktop t
 ## Slides
 
 The full slide deck presented during the workshop is available as
-[demystifying-linux-slides.pdf](demystifying-linux-slides.pdf). It follows the same
-modules as this repository, so you can keep it open while working through the
+[demystifying-linux-slides.pdf](demystifying-linux-slides.pdf) — 49 slides, written in
+Brazilian Portuguese and presented by Kerlon Henrique Soares Rodrigues. It follows the
+same modules as this repository, so you can keep it open while working through the
 scripts and the Docker example.
 
 ## Prerequisites & Setup
